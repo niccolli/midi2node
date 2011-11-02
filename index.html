@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Controling Color</title>
+		<script type="text/javascript" src="./socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			var socket = io.connect('http://chocolate.local', {port:4126});
+
+			socket.on('message', function(message){
+					console.log(message);
+				var m = message.bgcolor;
+				document.getElementById('back').style.backgroundColor = m;
+				document.getElementById('data').innerText = m;
+			});
+			</script>
+	</head>
+	<body id="back">
+		<div id="data">node</div>
+	</body>
+</html>
